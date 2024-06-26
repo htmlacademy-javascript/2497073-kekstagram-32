@@ -14,3 +14,28 @@ checkingLengthString('проверяемая строка', 10); // false
 
 checkingLengthString('MG', 1); // false
 
+////////
+/// Вторая функция проверка на палиндром
+
+function isStringPalindrome(string) {
+  string = string.replaceAll(' ', '').toLowerCase();
+
+  const normalizedString = string;
+  let emptyString = '';
+
+  for (let i = normalizedString.length - 1; i >= 0; i--) {
+    emptyString += normalizedString[i];
+  }
+  return emptyString === normalizedString;
+}
+
+// Строка является палиндромом
+isStringPalindrome('топот'); // true
+// Несмотря на разный регистр, тоже палиндром
+isStringPalindrome('ДовОд'); // true
+// Это не палиндром
+isStringPalindrome('Кекс'); // false
+// Это палиндром
+isStringPalindrome('Лёша на полке клопа нашёл '); // true
+// Это не палиндром
+isStringPalindrome('aiR bOok'); // false
