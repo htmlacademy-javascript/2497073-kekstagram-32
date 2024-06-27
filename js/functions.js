@@ -39,3 +39,27 @@ isStringPalindrome('Кекс'); // false
 isStringPalindrome('Лёша на полке клопа нашёл '); // true
 // Это не палиндром
 isStringPalindrome('aiR bOok'); // false
+
+//////////
+/// Третья функция ДОП
+
+function returnsNumber(string) {
+
+  let numbers = '';
+  for (let i = 0; i < string.length; i++) {
+    if (!isNaN(string[i])) {
+      numbers += string[i];
+    }
+  }
+  numbers = numbers.replaceAll(' ', '');
+  numbers = parseInt(numbers, 10);
+  return numbers;
+}
+
+returnsNumber('2023 год');            // 2023
+returnsNumber('ECMAScript 2022');     // 2022
+returnsNumber('1 кефир, 0.5 батона'); // 105
+returnsNumber('агент 007');           // 7
+returnsNumber('а я томат');           // NaN
+returnsNumber('q1w2e3r4t5');           // 12345
+
