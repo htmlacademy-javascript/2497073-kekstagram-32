@@ -68,7 +68,7 @@ returnsNumber('q1w2e3r4t5');// 12345
 function isConvertHoursMinutes(timeInHours) {
   const timeInMinutes = timeInHours.split(':');
   return Number(timeInMinutes[0]) * 60 + parseInt(timeInMinutes[1], 10);
-};
+}
 
 function isCalculationWorkingHours(timeStart, timeEnd, startMeeting, durationMeeting) {
   const timeStartInMinutes = isConvertHoursMinutes(timeStart);
@@ -84,7 +84,7 @@ function isCalculationWorkingHours(timeStart, timeEnd, startMeeting, durationMee
 90 - продолжительность встречи в минутах
 */
 isCalculationWorkingHours('08:00', '17:30', '14:00', 90); // true
-isCalculationWorkingHours('8:0', '10:0', '8:0', 120);     // true
+isCalculationWorkingHours('8:0', '10:0', '8:0', 120); // true
 isCalculationWorkingHours('08:00', '14:30', '14:00', 90); // false
-isCalculationWorkingHours('14:00', '17:30', '08:0', 90);  // false
+isCalculationWorkingHours('14:00', '17:30', '08:0', 90); // false
 isCalculationWorkingHours('8:00', '17:30', '08:00', 900); // false
