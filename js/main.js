@@ -1,4 +1,5 @@
 import './util.js';
 import { getPhotosGenerator } from './data.js';
+import { generatorMiniatures } from './miniatures.js';
 
-getPhotosGenerator();
+generatorMiniatures(getPhotosGenerator());
