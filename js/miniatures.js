@@ -1,9 +1,9 @@
 const templatePicture = document.querySelector('#picture').content.querySelector('.picture');
-const containerPicture = document.querySelector('.pictures');
 
 const createMiniature = (picture) => {
   const miniature = templatePicture.cloneNode(true);
 
+  miniature.id = picture.id;
   miniature.querySelector('.picture__img').src = picture.url;
   miniature.querySelector('.picture__img').alt = picture.description;
   miniature.querySelector('.picture__likes').textContent = picture.likes;
@@ -12,14 +12,14 @@ const createMiniature = (picture) => {
   return miniature;
 };
 
-const generatorMiniatures = (miniatures) => {
+const generatorMiniatures = (miniatures, container) => {
   const fragment = document.createDocumentFragment();
-
   miniatures.forEach((element) => {
     const miniature = createMiniature(element);
     fragment.append(miniature);
   });
-  containerPicture.append(fragment);
+
+  container.append(fragment);
 };
 
 export { generatorMiniatures };
